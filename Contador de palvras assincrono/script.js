@@ -38,7 +38,7 @@ function contarPalavras() {
     let contagem = palavrasFiltradas.length;
 
    
-    console.log(`Número de palavras : ${contagem}`);
+    console.log(`Numero de palavras : ${contagem}`);
   });
 }
 
