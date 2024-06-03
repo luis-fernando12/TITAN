@@ -29,13 +29,13 @@ function contarPalavras() {
     }
 
     // Remove
-    let palavras = data.replace(/[.,!?;:()]/g, '').split(/\s+/);
+    let caracter = data.replace(/[.,!?;:()]/g, '').split(/\s+/);
 
     // Filter 
-    let palavrasFiltradas = palavras.filter(palavra => palavra.length > 0);
+    let palavras = caracter.filter(palavra => palavra.length > 0);
 
     // Contar 
-    let contagem = palavrasFiltradas.length;
+    let contagem = palavras.length;
 
    
     console.log(`Numero de palavras : ${contagem}`);
