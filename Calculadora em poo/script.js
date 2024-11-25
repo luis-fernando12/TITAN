@@ -28,3 +28,5 @@ Calculadora.divi(42,7)
 Calculadora.expo(5,2)
 Calculadora.raiz(16,2)
 
+//fazeendo teste
+

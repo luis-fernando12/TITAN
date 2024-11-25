@@ -157,7 +157,7 @@ function add (accountName, amount) {
             console.log(err)
         }
     )
-        console.log(chalk.yellow(`Foi depositado o valor de R$${amount} na sua conta`),)
+        console.log(chalk.bgGreen(`Foi depositado o valor de R$${amount} na sua conta`),)
         
 }
 
@@ -241,7 +241,7 @@ function removeAmount(accountName, amount) {
     fs.writeFileSync(`contas/${accountName}.json`, JSON.stringify(accountDate) , function(err){
     console.log(err)})
 
-    console.log(chalk.bgGreenBright.black(`Deposito de R$${amount} efetuado com sucesso`))
+    console.log(chalk.bgRed.black(`Seu saque de R$${amount} foi efetuado com sucesso`))
 
     operation()
 } 

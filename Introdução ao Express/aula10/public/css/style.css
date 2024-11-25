@@ -1,0 +1,10 @@
+body {
+    text-align: center;
+    padding: 2em;
+    font-size: 30px;
+}
+
+li{
+    border: 2px solid black
+}
+
