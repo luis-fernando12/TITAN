@@ -18,29 +18,31 @@
 
 //-----------Codigo Assincrono----------
 
-var fs = require('fs');
+const fs = require('fs').promises
 
 
-function contarPalavras() {
-  fs.readFile('./arquivo.txt',  'utf8', (err, data) => {
-    if (err) {
-      console.error('Erro ao ler o arquivo:', err);
-      return;
+const caminhoArquivo = process.argv[2]
+
+
+async function contarPalavras (caminhoArquivo) {
+    try {
+        const lerArquivo = await fs.readFile(caminhoArquivo, 'utf-8')
+
+        const limparPalavras = lerArquivo.replace(/[.,!?;:()]/g, '').split(/\s+/)
+
+        const array = limparPalavras.filter(palavras => palavras.length > 0 )
+
+        const contagem = array.length
+
+            console.log(contagem)
+            console.log(array)
+
+    } catch (error) {
+        console.log(error)
     }
-
-    // Remove
-    let caracter = data.replace(/[.,!?;:()]/g, '').split(/\s+/);
-
-    // Filter 
-    let palavras = caracter.filter(palavra => palavra.length > 0);
-
-    // Contar 
-    let contagem = palavras.length;
-
-   
-    console.log(`Numero de palavras : ${contagem}`);
-  });
+    
 }
 
 
-contarPalavras('./arquivo.txt');
+
+contarPalavras(caminhoArquivo)
